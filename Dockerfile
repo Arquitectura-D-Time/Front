@@ -7,5 +7,5 @@ RUN npm install -g @angular/cli
 
 COPY . /front/
 
-CMD ng serve --host 0.0.0.0 
+RUN npm install
 
