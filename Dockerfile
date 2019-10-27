@@ -1,17 +1,11 @@
-# base image
-FROM node:carbon-slim
+FROM node:latest
 
-# set working directory
+RUN mkdir /front
 WORKDIR /front
 
-# install and cache app dependencies
-COPY package.json /front/
 RUN npm install -g @angular/cli
 
-# add app
-COPY .  /front
+COPY . /front/
 
-RUN npm install
+CMD ng serve --host 0.0.0.0 
 
-CMD npm start
-EXPOSE 4200
