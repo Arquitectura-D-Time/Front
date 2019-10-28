@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front';
+
+
+  myFunc(){
+    alert("function called");
+  }
+
 }
