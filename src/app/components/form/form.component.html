@@ -1,0 +1,9 @@
+<div *ngFor="let tuto of tutorias | async">
+    <div class="card" style="width: 100%; margin-top: 10px">
+      <div class="card-body">
+        <h5 class="card-title">{{tuto.materia}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">by {{tuto.descripcion}}</h6>
+        <p class="card-text">{{tuto.id}}</p>
+      </div>
+    </div>
+  </div>
