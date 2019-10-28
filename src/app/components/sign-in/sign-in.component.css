@@ -1,0 +1,49 @@
+#login {
+    background: linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.322)), url("/assets/clase.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;    
+}
+
+.title{
+    font-family: serif;
+    font-size: 5rem;
+    color: darkturquoise;
+}
+
+.description {
+    font-family: serif;
+    color: white;
+}
+
+#login > div > form {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 650px) {
+	body.custom-background {
+		background-attachment: scroll;
+    }
+    
+    #login {
+        background: linear-gradient(rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.322)), url("/assets/clase.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: stretch;
+    }
+}
+
+
+  
