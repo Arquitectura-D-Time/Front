@@ -1,4 +1,4 @@
-<div *ngFor="let tuto of tutorias | async">
+<!--<div *ngFor="let tuto of tutorias | async">
     <div class="card" style="width: 100%; margin-top: 10px">
       <div class="card-body">
         <h5 class="card-title">{{tuto.materia}}</h5>
@@ -6,4 +6,36 @@
         <p class="card-text">{{tuto.id}}</p>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <h1>Crear tutoria</h1>
+  <form [formGroup]="tutoForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Materia</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Calculo</option>
+        <option>Biologia</option>
+        <option>Programacion</option>
+        <option>Ortografia</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Descripcion</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Costo</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Id tutor</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Id token</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <input type="submit">
+    
+  </form>
