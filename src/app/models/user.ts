@@ -7,8 +7,6 @@ export class User {
     email: string;
     password: string;
     password_confirmation: string;
-    favorite_category: String;
-    check_conditions: String;
 }
 
 
@@ -35,9 +33,14 @@ export const SIGN_IN = gql`
         email: $email
         password: $password
     }) {
-      type
-      token
-      client
+      id
+	    email
+	    name
+	    nickname
+	    token
+	    type
+	    client
+      uid
     }
   }
 `;

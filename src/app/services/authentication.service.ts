@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User, SIGN_UP, SIGN_IN, IS_AUTHENTICATED, AUTHORIZATION } from '../models/user';
 import { Apollo } from 'apollo-angular';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -87,7 +87,7 @@ export class AuthenticationService {
             reject(error);
           });
         } else {
-          resolve({data: null, message: 'Usuario no autorizado comuniquese con el administrador del sistema'});
+          resolve({data: null, message: 'Usuario no encontrado'});
         }
       })
     });
