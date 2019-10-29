@@ -31,7 +31,7 @@ export class FormComponent implements OnInit {
     
 
     onSubmit(){
-      axios.post('http://localhost:5000/graphql?', {
+      axios.post('http://146.148.107.218:5000/graphql?', {
       query: `mutation{
         createTutoria(tutoria:{
           materia:"${this.tutoForm.value.materia}",
