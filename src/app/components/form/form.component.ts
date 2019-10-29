@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import {FormBuilder,FormGroup,Validators, FormControl} from '@angular/forms';
 import { Apollo } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -15,10 +15,11 @@ export class FormComponent implements OnInit {
 
   //tutorias: Observable<Tutoria[]>
   tutoForm: FormGroup;
+  tutoria: Tutoria;
 
   constructor(private apollo: Apollo,private formBuilder:FormBuilder) {
     this.tutoForm=this.formBuilder.group({
-      materia: ['',Validators.required],
+      materia:  new FormControl("Calculo", Validators.required),
       descripcion: ['',Validators.required],
       cupos: ['',Validators.required],
       idtutor: ['',Validators.required],
@@ -32,14 +33,15 @@ export class FormComponent implements OnInit {
     };
 
     onSubmit(){
+      this.tutoria = this.tutoForm.value
       this.apollo.mutate({
         mutation: CREATE_TUTORIA,
         variables: {
-          materia: "Calculo",
-          descripcion: "Basura",
-          cupos: 120,
-          idtutor: 2,
-          idtoken:"saro"
+          materia: this.tutoria.materia,
+          descripcion: this.tutoria.descripcion,
+          cupos: this.tutoria.cupos,
+          idtutor: this.tutoria.idtutor,
+          idtoken:this.tutoria.idtoken
         }
       }).subscribe(({ data }) => {
         console.log('got data', data);
