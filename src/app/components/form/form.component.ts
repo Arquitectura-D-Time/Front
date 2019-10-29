@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators, FormControl} from '@angular/forms';
-import { Apollo } from 'apollo-angular';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-
-import { Query, Tutoria,CREATE_TUTORIA } from '../../models/tutorias';
+import axios from "axios";
 
 @Component({
   selector: 'app-form',
@@ -15,9 +11,9 @@ export class FormComponent implements OnInit {
 
   //tutorias: Observable<Tutoria[]>
   tutoForm: FormGroup;
-  tutoria: Tutoria;
 
-  constructor(private apollo: Apollo,private formBuilder:FormBuilder) {
+
+  constructor(private formBuilder:FormBuilder) {
     this.tutoForm=this.formBuilder.group({
       materia:  new FormControl("Calculo", Validators.required),
       descripcion: ['',Validators.required],
@@ -29,26 +25,32 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     //this.tutorias = this.apollo.watchQuery<Query>({ query: ALL_TUTORIAS}).valueChanges.pipe(map(result => result.data.allTutorias));
-      
+    
     };
 
-    onSubmit(){
-      this.tutoria = this.tutoForm.value
-      this.apollo.mutate({
-        mutation: CREATE_TUTORIA,
-        variables: {
-          materia: this.tutoria.materia,
-          descripcion: this.tutoria.descripcion,
-          cupos: this.tutoria.cupos,
-          idtutor: this.tutoria.idtutor,
-          idtoken:this.tutoria.idtoken
-        }
-      }).subscribe(({ data }) => {
-        console.log('got data', data);
-      },(error) => {
-        console.log('there was an error sending the query', error);
-      });
-    }
     
+
+    onSubmit(){
+      axios.post('http://localhost:5000/graphql?', {
+      query: `mutation{
+        createTutoria(tutoria:{
+          materia:"${this.tutoForm.value.materia}",
+          descripcion:"${this.tutoForm.value.descripcion}",
+          cupos:${this.tutoForm.value.cupos},
+          idtutor:${this.tutoForm.value.idtutor},
+          idtoken:"${this.tutoForm.value.idtoken}"
+        }){
+          id
+        }  
+      }`
+   })
+    .then(res => {
+    console.log(res.data);
+   })
+    .catch(err => console.log(err))
   }
+      
+}
+    
+
 
