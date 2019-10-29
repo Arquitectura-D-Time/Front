@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { User } from 'src/app/models/user';
 import { Router } from '@angular/router';
+import axios from "axios";
 
 @Component({
   selector: 'app-sign-in',
@@ -26,13 +27,28 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() {
-    this.user = this.signInForm.value;
-    this.authService.sign_in(this.user).then((response) => {
-        this.router.navigateByUrl('/');
-        this.alert = response.message;
-      }, (error) => {
-        console.log('There was an error sending the mutation', error);
-      });
+    axios.post('http://146.148.107.218:5000/graphql?', {
+      query: `mutation{
+        createSession(session:{
+          email:"${this.signInForm.value.email}"
+          password:"${this.signInForm.value.password}"
+        }){
+          id
+          email
+	        name
+	        nickname
+	        token
+	        type
+	        client
+          uid
+        }
+          
+      }`
+   })
+    .then(res => {
+    console.log(res.data);
+   })
+    .catch(err => console.log(err))
   }
 
 }

@@ -1,14 +1,28 @@
 #cont1 {
-    background: url("/assets/clase.jpg");
-    background-size: auto;
-    background-repeat: no-repeat; 
-    border: 2px solid black;
-    height: 100%;
-    padding: 25px;
+    background: url("/assets/clase2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 844px; 
+    /*border: 2px solid black;*/
+    padding: 25px;   
 }
 
 #cont2 {
-    border: 2px solid black;
+    /*border: 2px solid blue;*/
     height: 80%;
-    align-content: center;
+}
+
+#cont3 {
+    /*border: 2px solid yellow;*/
+    float: right;
+    width: 40%;
+    margin-top: 60px;
+}
+
+#cont4 {
+    /*border: 2px solid red;*/
+    float: left;
+    width: 40%;
+    height: 50%;
+    margin-top: 60px;
 }
