@@ -15,6 +15,9 @@ export class SignUpComponent implements OnInit {
   user: any = {};
   signUpForm: FormGroup;
   alert: string;
+  submitted:boolean=false;
+  success: boolean=false;
+
   constructor(private authService: AuthenticationService,
               private router: Router) { }
 
@@ -28,9 +31,10 @@ export class SignUpComponent implements OnInit {
       password_confirmation: new FormControl(this.user.password_confirmation, [Validators.required, Validators.minLength(6)]),
     });
   }
-
+//146.148.107.218 
   onSubmit() {
-    axios.post('http://146.148.107.218:5000/graphql?', {
+    if(this.signUpForm.valid){
+      axios.post('http://146.148.107.218:5000/graphql?', {
       query: `mutation{
         createUser(user:{
           name:"${this.signUpForm.value.name}"
@@ -52,9 +56,14 @@ export class SignUpComponent implements OnInit {
       }`
    })
     .then(res => {
-    console.log(res.data);
+    alert("Registrado correctamente")
+    this.router.navigate(['sign-in'])
    })
     .catch(err => console.log(err))
+  }else{
+    alert("Por favor complete los campos correctamente")
+    
   }
-
+    
+}
 }

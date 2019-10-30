@@ -27,7 +27,7 @@ export class SignInComponent implements OnInit {
       password: new FormControl(this.user.password, [Validators.required, Validators.minLength(6)]),
     });
   }
-
+//146.148.107.218 
   onSubmit() {
     axios.post('http://146.148.107.218:5000/graphql?', {
       query: `mutation{
