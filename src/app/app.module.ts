@@ -1,18 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
-import { HttpClientModule } from '@angular/common/http';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ApolloModule } from "apollo-angular";
 import { HttpLinkModule } from "apollo-angular-link-http";
 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FormComponent } from './components/form/form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent
+    SignInComponent,
+    FormComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -22,9 +27,13 @@ import { HttpLinkModule } from "apollo-angular-link-http";
     ReactiveFormsModule,
     FormsModule,
     ApolloModule,
-    HttpLinkModule
+    HttpLinkModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
