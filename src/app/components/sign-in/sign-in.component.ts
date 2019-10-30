@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AuthenticationService } from 'src/app/services/authentication.service';
-import { User } from 'src/app/models/user';
 import { Router } from '@angular/router';
 import axios from "axios";
+import { AuthenticationService } from 'app/services/authentication.service';
+import { User } from 'app/models/user';
 
 @Component({
   selector: 'app-sign-in',
