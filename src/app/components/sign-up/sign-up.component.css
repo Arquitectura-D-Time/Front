@@ -8,13 +8,13 @@
 }
 
 #cont2 {
-    border: 2px solid blue;
+    /*border: 2px solid blue;*/
     height: 80%;
     /*align-content: center;*/
 }
 
 #cont3 {
-    border: 2px solid yellow;
+    /*border: 2px solid yellow;*/
     float: right;
     width: 40%;
     margin-top: 60px;
@@ -26,7 +26,7 @@
 }
 
 #cont4 {
-    border: 2px solid red;
+    /*border: 2px solid red;*/
     float: left;
     width: 40%;
     height: 50%;
