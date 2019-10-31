@@ -15,8 +15,10 @@ export class SignInComponent implements OnInit {
   user: any = {};
   signInForm: FormGroup;
   alert: string;
+  
+
   constructor(private authService: AuthenticationService,
-              private router: Router) { }
+    private router: Router) { }
 
    ngOnInit() {
     this.user = new User();
@@ -25,7 +27,8 @@ export class SignInComponent implements OnInit {
       password: new FormControl(this.user.password, [Validators.required, Validators.minLength(6)]),
     });
   }
-
+//146.148.107.218 ---Dennis
+//35.202.129.233----Mia
   onSubmit() {
     axios.post('http://146.148.107.218:5000/graphql?', {
       query: `mutation{
@@ -46,7 +49,9 @@ export class SignInComponent implements OnInit {
       }`
    })
     .then(res => {
+    
     console.log(res.data);
+    this.router.navigate(['form'])
    })
     .catch(err => console.log(err))
   }

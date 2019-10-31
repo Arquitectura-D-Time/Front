@@ -5,6 +5,7 @@ import { GraphQLModule } from './graphql.module';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ApolloModule } from "apollo-angular";
 import { HttpLinkModule } from "apollo-angular-link-http";
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,8 @@ import { HeaderComponent } from './components/header/header.component';
     AppComponent,
     SignInComponent,
     FormComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

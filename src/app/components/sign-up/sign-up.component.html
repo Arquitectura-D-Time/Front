@@ -1,0 +1,36 @@
+<body>
+    <div class="container-fluid" id="cont1">
+        <div class="container-fluid" id="cont2">            
+            <div class="container-fluid" id="cont3">                
+                <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="px-4 py-3">
+                    <div class="form-group">
+                        <label for="usr">Nombre</label>
+                        <input type="usr" class="form-control" placeholder="Nombre" formControlName="name">
+                    </div>
+                    <div class="form-group">
+                            <label for="usr">Usuario</label>
+                            <input type="usr" class="form-control" placeholder="Usuario" formControlName="nickname">
+                        </div>
+                    <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" class="form-control" placeholder="correo@example.com" formControlName="email">
+                        </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" class="form-control" placeholder="******" formControlName="password">
+                    </div>
+                    <div class="form-group">
+                            <label for="password">Confirma tu Contraseña</label>
+                            <input type="password" class="form-control" placeholder="******" formControlName="password_confirmation">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrate</button>
+                </form>
+            </div>
+            <div class="container-fluid" id="cont4">
+                <h1 id="bienvenido">Bienvenido a UNtutor!!!</h1>
+                <br>
+                <h1>Aqui tendrás la oportunidad de ser profe y estudiante al mismo tiempo</h1>
+            </div>
+        </div>
+    </div>
+</body>

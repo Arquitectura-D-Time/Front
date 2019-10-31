@@ -10,6 +10,7 @@
 #cont2 {
     /*border: 2px solid blue;*/
     height: 80%;
+    /*align-content: center;*/
 }
 
 #cont3 {
@@ -17,6 +18,7 @@
     float: right;
     width: 40%;
     margin-top: 60px;
+    
 }
 
 #cont4 {
@@ -25,8 +27,4 @@
     width: 40%;
     height: 50%;
     margin-top: 60px;
-}
-
-.btn{
-    margin: 0 0 0 15px
 }
