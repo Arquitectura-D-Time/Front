@@ -15,6 +15,6 @@ export class ProfileComponent implements OnInit {
   nombre = localStorage.getItem("name");
   nickname = localStorage.getItem("nickname");
   email = localStorage.getItem("email");
-  image = localStorage.getItem("imagen");
+  image = localStorage.getItem("image");
 
 }
