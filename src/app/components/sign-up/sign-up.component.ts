@@ -32,9 +32,10 @@ export class SignUpComponent implements OnInit {
     });
   }
 //146.148.107.218 
+//35.202.129.233
   onSubmit() {
     if(this.signUpForm.valid){
-      axios.post('http://146.148.107.218:5000/graphql?', {
+      axios.post('http://35.202.129.233:5000/graphql?', {
       query: `mutation{
         createUser(user:{
           name:"${this.signUpForm.value.name}"

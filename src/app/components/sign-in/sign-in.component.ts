@@ -28,8 +28,9 @@ export class SignInComponent implements OnInit {
     });
   }
 //146.148.107.218 
+//35.202.129.233
   onSubmit() {
-    axios.post('http://146.148.107.218:5000/graphql?', {
+    axios.post('http://35.202.129.233:5000/graphql?', {
       query: `mutation{
         createSession(session:{
           email:"${this.signInForm.value.email}"
