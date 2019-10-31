@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { Form2Component } from './components/form2/form2.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { HeaderComponent } from './components/header/header.component';
     SignInComponent,
     FormComponent,
     HeaderComponent,
-    SignUpComponent
+    SignUpComponent,
+    Form2Component
   ],
   imports: [
     BrowserModule,

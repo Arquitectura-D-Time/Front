@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators, FormControl} from '@angular/forms';
 import axios from "axios";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -13,13 +14,11 @@ export class FormComponent implements OnInit {
   tutoForm: FormGroup;
 
 
-  constructor(private formBuilder:FormBuilder) {
+  constructor(private formBuilder:FormBuilder,private router: Router) {
     this.tutoForm=this.formBuilder.group({
       materia:  new FormControl("Calculo", Validators.required),
       descripcion: ['',Validators.required],
       cupos: ['',Validators.required],
-      idtutor: ['',Validators.required],
-      idtoken:['',Validators.required],
     })
   }
 
@@ -37,15 +36,20 @@ export class FormComponent implements OnInit {
           materia:"${this.tutoForm.value.materia}",
           descripcion:"${this.tutoForm.value.descripcion}",
           cupos:${this.tutoForm.value.cupos},
-          idtutor:${this.tutoForm.value.idtutor},
-          idtoken:"${this.tutoForm.value.idtoken}"
+          idtutor:${localStorage.getItem("id")},
+          idtoken:"random"
         }){
           id
+          materia
         }  
       }`
    })
     .then(res => {
-    console.log(res.data);
+      console.log(res.data.data.createTutoria.id);
+      console.log(res.data.data.createTutoria.materia);
+      localStorage.setItem('idtutoria', res.data.data.createTutoria.id);
+      localStorage.setItem('materia', res.data.data.createTutoria.materia);
+      this.router.navigate(['form2'])
    })
     .catch(err => console.log(err))
   }

@@ -7,7 +7,7 @@
       </div>
     </div>
   </div> -->
-
+<app-header></app-header>
   <h1>Crear tutoria</h1>
   <form [formGroup]="tutoForm" (ngSubmit)="onSubmit()">
     
@@ -28,14 +28,7 @@
       <label for="exampleFormControlInput1">Costo</label>
       <input type="text" class="form-control"   formControlName="cupos" >
     </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Id tutor</label>
-      <input type="text" class="form-control" formControlName="idtutor">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Id token</label>
-      <input type="text" class="form-control" formControlName="idtoken">
-    </div>
-    <input type="submit">
+    
+    <input class="btn btn-primary" type="submit" value="Siguiente">
     
   </form>
