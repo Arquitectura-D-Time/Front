@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { Form2Component } from './components/form2/form2.component';
 
+import { ProfileComponent } from './components/profile/profile.component';
+import { ImageComponent } from './components/image/image.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { Form2Component } from './components/form2/form2.component';
     FormComponent,
     HeaderComponent,
     SignUpComponent,
-    Form2Component
+    Form2Component,
+    ProfileComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
