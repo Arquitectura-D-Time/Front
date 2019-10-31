@@ -14,8 +14,7 @@ export class SignInComponent implements OnInit {
 
   user: any = {};
   signInForm: FormGroup;
-  alert: string;
-  
+  alert: string;  
 
   constructor(private authService: AuthenticationService,
     private router: Router) { }
@@ -47,11 +46,18 @@ export class SignInComponent implements OnInit {
           
       }`
    })
-    .then(res => {
-    
+    .then(res => {     
     console.log(res.data);
-   })
-    .catch(err => console.log(err))
-  }
 
+    //ercruzr@unal.edu.co
+    //let json: any = JSON.stringify(res.data);
+    //console.log(res.data.data.createSession.name);
+    localStorage.setItem('id', res.data.data.createSession.id);
+    localStorage.setItem('email', res.data.data.createSession.email);
+    localStorage.setItem('name', res.data.data.createSession.name);
+    localStorage.setItem('nickname', res.data.data.createSession.nickname);
+   })
+    .catch(err => console.log(err))    
+  }
 }
+
