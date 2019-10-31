@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ImageComponent } from './components/image/image.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HeaderComponent } from './components/header/header.component';
     SignInComponent,
     FormComponent,
     HeaderComponent,
-    SignUpComponent
+    SignUpComponent,
+    ProfileComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
