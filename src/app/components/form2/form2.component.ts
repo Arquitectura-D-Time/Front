@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators, FormControl} from '@angular/forms';
 import axios from "axios";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form2',
@@ -11,7 +12,7 @@ export class Form2Component implements OnInit {
 
   horario: FormGroup;
 
-  constructor(private formBuilder:FormBuilder) { 
+  constructor(private formBuilder:FormBuilder,private router: Router) { 
     this.horario=this.formBuilder.group({
       NombreMateria: ['',Validators.required],
       Fecha: ['',Validators.required],
@@ -47,8 +48,8 @@ export class Form2Component implements OnInit {
     }`
  })
   .then(res => {
-  
- 
+  alert("Tutoria creada correctamente")
+  this.router.navigate(['profile'])
  })
   .catch(err => console.log(err))
 }

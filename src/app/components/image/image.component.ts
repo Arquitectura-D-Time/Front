@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators, FormControl} from '@angular/forms';
-import axios from "axios";
 import { HttpClient } from '@angular/common/http';
 
 

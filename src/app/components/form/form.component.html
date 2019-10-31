@@ -8,27 +8,34 @@
     </div>
   </div> -->
 <app-header></app-header>
-  <h1>Crear tutoria</h1>
+<div class="text-center">
+  <h1 class="container-fluid">Crear tutoria</h1>
+</div>
+ 
   <form [formGroup]="tutoForm" (ngSubmit)="onSubmit()">
+    <div class="container-fluid">
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Materia</label>
+        <select class="form-control" formControlName="materia">
+          <option>Calculo</option>
+          <option>Biologia</option>
+          <option>Programacion</option>
+          <option>Ortografia</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Descripcion</label>
+        <textarea class="form-control"  rows="3" formControlName="descripcion"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Costo</label>
+        <input type="text" class="form-control"   formControlName="cupos" >
+      </div>
+    </div>
     
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Materia</label>
-      <select class="form-control" formControlName="materia">
-        <option>Calculo</option>
-        <option>Biologia</option>
-        <option>Programacion</option>
-        <option>Ortografia</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Descripcion</label>
-      <textarea class="form-control"  rows="3" formControlName="descripcion"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Costo</label>
-      <input type="text" class="form-control"   formControlName="cupos" >
+    <div class="text-center">
+      <input class="btn btn-primary" type="submit" value="Siguiente">
     </div>
     
-    <input class="btn btn-primary" type="submit" value="Siguiente">
     
   </form>

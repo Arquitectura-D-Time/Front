@@ -1,5 +1,8 @@
 <app-header></app-header>
+<div class="text-center">
   <h1>Crear tutoria</h1>
+</div>
+  
   <form [formGroup]="horario" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="exampleFormControlInput1">Cupos</label>
@@ -17,6 +20,9 @@
       <label for="exampleFormControlInput1">Hora Final</label>
       <input type="text" class="form-control"   formControlName="HoraFinal" >
     </div>
-    <input class="btn btn-primary" type="submit" value="Crear">
+    <div class="text-center">
+      <input class="btn btn-primary" type="submit" value="Crear">
+    </div>
+   
     
   </form>
