@@ -1,11 +1,9 @@
-#cont1 {
+#fondo{
     background: url("/assets/clase2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: auto;
-
-    /*border: 2px solid black;*/
-    padding: 25px;   
+    height: 100vh;
+    padding: 25px
 }
 
 #cont2 {
@@ -21,6 +19,12 @@
 }
 
 #cont4 {
+    /*border: 2px solid deeppink;*/
+    width: 60%;
+    height: 50%;    
+}
+
+#cont5 {
     /*border: 2px solid red;*/
     float: left;
     width: 40%;
@@ -30,4 +34,8 @@
 
 .btn{
     margin: 0 0 0 15px
+}
+
+#bienvenido{
+    font-size: 70px;
 }

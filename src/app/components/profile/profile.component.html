@@ -1,27 +1,28 @@
 <app-header></app-header>
-<body>
-  <div class="container-fluid" id="cont1">
-    <div class="container-fluid" id="cont2">            
-      <div class="container-fluid" id="cont3">
-        <div class="circulo" >
-          <img src={{image}} alt="Foto de perfil" class="img">
-        </div>
+<body id="cont1">
+  <div class="container-fluid text-center">       
+      <div class="center circulo" >
+            <img  src={{urlimage}} >
       </div>
-      <div class="container-fluid" id="cont4">
-        <span class="navbar-text"> Nombre: {{ nombre }} </span><br>
-        <span class="navbar-text"> Usuario: {{ nickname }} </span><br>
-        <span class="navbar-text"> Email: {{ email }} </span>
+      <div >
+        <span class="navbar-text"> <b>Nombre:</b>  {{ nombre }} </span><br>
+        <span class="navbar-text"> <b>Usuario:</b>  {{ nickname }} </span><br>
+        <span class="navbar-text"> <b>Email:</b>  {{ email }} </span>
       </div>
-      <div class="container-fluid" id="cont5">
-          horario
+      <div >
+          <b>Horario</b> 
       </div>
-      <div class="container-fluid" id="cont6">
-          comentarios
+      <div >
+          <b>Comentarios</b> 
       </div>
-      <div class="container-fluid" id="cont7">        
-        <button type="button" class="btn btn-success">Descargar Hoja de Vida</button>
+      <div>        
+        <button type="button" class="btn btn-success">Hoja de Vida</button>
         <button type="button" class="btn btn-success">Agendar</button>
-      </div>                  
-    </div>
+      </div>
+      <br>
+        <div>
+            <button type="button" class="btn btn-info">Editar</button> <br>
+            <br>
+        </div>              
   </div>
 </body>

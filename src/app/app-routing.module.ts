@@ -6,6 +6,8 @@ import { FormComponent} from './components/form/form.component';
 import { Form2Component } from './components/form2/form2.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AgendadasComponent } from './components/agendadas/agendadas.component';
+import { TutoriasComponent } from './components/tutorias/tutorias.component';
 
 const routes: Routes = [
   {path: 'sign-in', component: SignInComponent},
@@ -14,7 +16,9 @@ const routes: Routes = [
   {path: 'form2', component:Form2Component},
   {path: '', component: SignInComponent },
   {path: 'header', component: HeaderComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'agendadas', component: AgendadasComponent},
+  {path: 'tutorias', component:TutoriasComponent}
 ];
 
 @NgModule({

@@ -1,28 +1,59 @@
 <app-header></app-header>
+<br>
 <div class="text-center">
-  <h1>Crear tutoria</h1>
+  <h2>Seleccionar Horarios</h2>
 </div>
   
   <form [formGroup]="horario" (ngSubmit)="onSubmit()">
+    <div class="container">
     <div class="form-group">
-      <label for="exampleFormControlInput1">Cupos</label>
-      <input type="text" class="form-control"   formControlName="Cupos" >
+      <div class="row">
+        <div class="col-2 offset-3">
+          <label for="exampleFormControlInput1">Cupos</label>
+        </div>
+        <div class="col-3">
+            <input type="text" class="form-control"   formControlName="Cupos" >
+        </div>
+      </div>
     </div>
+
     <div class="form-group">
-      <label for="exampleFormControlInput1">Fecha</label>
-      <input type="text" class="form-control"   formControlName="Fecha" >
+      <div class="row">
+        <div class="col-2 offset-3">
+            <label for="exampleFormControlInput1">Fecha</label>
+        </div>
+        <div class="col-3 ">
+            <input type="text" class="form-control" type="date"  formControlName="Fecha" >
+        </div>
+      </div>
     </div>
+
     <div class="form-group">
-      <label for="exampleFormControlInput1">Hora Inicio</label>
-      <input type="text" class="form-control"   formControlName="HoraInicio" >
+      <div class="row">
+        <div class="col-2 offset-3">
+            <label for="exampleFormControlInput1">Hora Inicio</label>
+        </div>
+        <div class="col-3">
+            <input type="text" class="form-control" type="time"  formControlName="HoraInicio" >
+        </div>
+      </div>
     </div>
+
+
     <div class="form-group">
-      <label for="exampleFormControlInput1">Hora Final</label>
-      <input type="text" class="form-control"   formControlName="HoraFinal" >
+      <div class="row">
+        <div class="col-2 offset-3">
+            <label for="exampleFormControlInput1">Hora Final</label>
+        </div>
+        <div class="col-3">
+           <input type="text" class="form-control"  type="time" formControlName="HoraFinal" >
+        </div>
+      </div>
     </div>
+
     <div class="text-center">
       <input class="btn btn-primary" type="submit" value="Crear">
     </div>
-   
+  </div>
     
   </form>

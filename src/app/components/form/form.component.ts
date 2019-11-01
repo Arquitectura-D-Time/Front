@@ -45,8 +45,6 @@ export class FormComponent implements OnInit {
       }`
    })
     .then(res => {
-      console.log(res.data.data.createTutoria.id);
-      console.log(res.data.data.createTutoria.materia);
       localStorage.setItem('idtutoria', res.data.data.createTutoria.id);
       localStorage.setItem('materia', res.data.data.createTutoria.materia);
       this.router.navigate(['form2'])
