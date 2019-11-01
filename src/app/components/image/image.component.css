@@ -1,7 +1,6 @@
 .circulo{
     width: 60px;
     height: 60px;
-    background-color: aqua;
     border-radius: 100% ;
 }
 .circulo > .img{
