@@ -49,7 +49,7 @@ export class Form2Component implements OnInit {
  })
   .then(res => {
   alert("Tutoria creada correctamente")
-  this.router.navigate(['profile'])
+  this.router.navigate(['tutorias'])
  })
   .catch(err => console.log(err))
 }
