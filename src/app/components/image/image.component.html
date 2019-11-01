@@ -14,15 +14,16 @@
 </div>
 -->
 
-<div class="dropdown ">
+<div class="dropdown container">
         <button class="circulo btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img src={{urlimage}}>
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item">Ver Perfil</a>
+          <a class="dropdown-item" routerLink="/profile">Ver Perfil</a>
+          <a class="dropdown-item" routerLink="/tutorias">Tutorias</a>
           <a class="dropdown-item">Agendadas</a>
           <a class="dropdown-item">Mis Tutorias</a>
-          <a class="dropdown-item">Crear Tutorias</a>
-          <a class="dropdown-item">Cerrar Sesion</a>
+          <a class="dropdown-item" routerLink="/form">Crear Tutorias</a>
+          <a class="dropdown-item" (click)="clean()" routerLink="/sign-in">Cerrar Sesion</a>
         </div>
 </div>

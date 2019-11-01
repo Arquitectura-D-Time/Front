@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+.circulo > .img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100% ;
+}
+
+/*Centra image, ya q text-center no funciona con imagenes*/
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }

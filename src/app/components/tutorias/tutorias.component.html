@@ -1,0 +1,33 @@
+<app-header></app-header>
+<br>
+<div class="text-center">
+    <h2>Tutorias Ofertadas</h2>
+</div>
+<div *ngFor="let tuto of tutos">
+    <div class="container">
+        <div class="card" style="width: 100%; margin-top: 10px">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col text-center">
+                        <img src="/assets/nophoto.png" >
+                    </div>
+                    <div class="col">
+                        <p class="card-text"><b>Materia: </b> {{tuto.NombreMateria}}</p>
+                        <p class="card-text"><b>Cupos: </b>{{tuto.Cupos}}</p>
+                        <p class="card-text"><b>Fecha: </b>{{tuto.Fecha}}</p>
+                        
+                    </div>
+                    <div class="col">
+                        <p class="card-text"><b>Hora Inicio: </b>{{tuto.HoraInicio}}</p>
+                        <p class="card-text"><b>Hora Finalizacion: </b>{{tuto.HoraFinal}}</p>
+                        <button class="btn btn-primary">Agendar</button>
+                    </div>
+
+                </div>
+                
+               
+            </div>
+         </div>
+    </div>
+    
+ </div>

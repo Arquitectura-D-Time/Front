@@ -16,6 +16,8 @@ import { Form2Component } from './components/form2/form2.component';
 
 import { ProfileComponent } from './components/profile/profile.component';
 import { ImageComponent } from './components/image/image.component';
+import { AgendadasComponent } from './components/agendadas/agendadas.component';
+import { TutoriasComponent } from './components/tutorias/tutorias.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ImageComponent } from './components/image/image.component';
     SignUpComponent,
     Form2Component,
     ProfileComponent,
-    ImageComponent
+    ImageComponent,
+    AgendadasComponent,
+    TutoriasComponent
   ],
   imports: [
     BrowserModule,

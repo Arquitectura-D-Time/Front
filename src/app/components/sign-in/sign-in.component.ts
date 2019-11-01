@@ -58,7 +58,7 @@ export class SignInComponent implements OnInit {
     localStorage.setItem('email', res.data.data.createSession.email);
     localStorage.setItem('name', res.data.data.createSession.name);
     localStorage.setItem('nickname', res.data.data.createSession.nickname);
-    this.router.navigate(['form'])
+    this.router.navigate(['tutorias'])
    })
     .catch(err => console.log(err))    
   }
