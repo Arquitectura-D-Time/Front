@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~8.2.4",
     "@angular/platform-browser-dynamic": "~8.2.4",
     "@angular/router": "~8.2.4",
+    "@auth0/angular-jwt": "^3.0.1",
     "@types/angular": "^1.6.56",
     "apollo-angular": "^1.8.0",
     "apollo-angular-link-http": "^1.9.0",

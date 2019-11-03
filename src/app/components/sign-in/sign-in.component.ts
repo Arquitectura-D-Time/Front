@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import axios from "axios";
-import { AuthenticationService } from 'app/services/authentication.service';
 import { User } from 'app/models/user';
 
 @Component({
@@ -16,8 +15,7 @@ export class SignInComponent implements OnInit {
   signInForm: FormGroup;
   alert: string;  
 
-  constructor(private authService: AuthenticationService,
-    private router: Router) { }
+  constructor(private router: Router) { }
 
    ngOnInit() {
     this.user = new User();
@@ -58,6 +56,7 @@ export class SignInComponent implements OnInit {
     localStorage.setItem('email', res.data.data.createSession.email);
     localStorage.setItem('name', res.data.data.createSession.name);
     localStorage.setItem('nickname', res.data.data.createSession.nickname);
+    localStorage.setItem('token',res.data.data.createSession.token);
     this.router.navigate(['tutorias'])
    })
     .catch(err => console.log(err))    
