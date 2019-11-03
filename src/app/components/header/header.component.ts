@@ -13,7 +13,5 @@ export class HeaderComponent implements OnInit {
   }
   nombre = localStorage.getItem("name");
   
-  clean(){
-    localStorage.clear();
-  }
+ 
 }
