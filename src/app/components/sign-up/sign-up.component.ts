@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import axios from "axios";
-import { AuthenticationService } from 'app/services/authentication.service';
 import { User } from 'app/models/user';
 
 @Component({
@@ -18,8 +17,7 @@ export class SignUpComponent implements OnInit {
   submitted:boolean=false;
   success: boolean=false;
 
-  constructor(private authService: AuthenticationService,
-              private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.user = new User();

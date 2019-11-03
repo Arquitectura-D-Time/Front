@@ -13,11 +13,15 @@ import { FormComponent } from './components/form/form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { Form2Component } from './components/form2/form2.component';
-
+import { JwtModule } from "@auth0/angular-jwt";
 import { ProfileComponent } from './components/profile/profile.component';
 import { ImageComponent } from './components/image/image.component';
 import { AgendadasComponent } from './components/agendadas/agendadas.component';
 import { TutoriasComponent } from './components/tutorias/tutorias.component';
+
+export function tokenGetter() {
+  return localStorage.getItem("token");
+}
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { TutoriasComponent } from './components/tutorias/tutorias.component';
     ProfileComponent,
     ImageComponent,
     AgendadasComponent,
-    TutoriasComponent
+    TutoriasComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,13 @@ import { TutoriasComponent } from './components/tutorias/tutorias.component';
     HttpLinkModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ["*"],
+      }
+    })
   ],
   providers: [
   ],
