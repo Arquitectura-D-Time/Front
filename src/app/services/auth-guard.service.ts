@@ -9,8 +9,8 @@ export class AuthGuardService implements CanActivate{
 
   constructor(public auth: AuthService, public router: Router) { }
 
-  canActivate(): boolean {
-    if (!this.auth.isAuthenticated()) {
+  async canActivate(){
+    if (await this.auth.isAuthenticated()==false) {
       alert("Necesita estar autenticado para acceder a esta pagina")
       this.router.navigate(['sign-in']);
       return false;

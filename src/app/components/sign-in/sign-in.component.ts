@@ -45,18 +45,14 @@ export class SignInComponent implements OnInit {
           
       }`
    })
-    .then(res => {     
-    console.log(res.data);
-    
-
-    //ercruzr@unal.edu.co
-    //let json: any = JSON.stringify(res.data);
-    //console.log(res.data.data.createSession.name);
+    .then(res => {    
     localStorage.setItem('id', res.data.data.createSession.id);
     localStorage.setItem('email', res.data.data.createSession.email);
     localStorage.setItem('name', res.data.data.createSession.name);
     localStorage.setItem('nickname', res.data.data.createSession.nickname);
     localStorage.setItem('token',res.data.data.createSession.token);
+    localStorage.setItem('client',res.data.data.createSession.client);
+    localStorage.setItem('uid',res.data.data.createSession.uid)
     this.router.navigate(['tutorias'])
    })
     .catch(err => console.log(err))    

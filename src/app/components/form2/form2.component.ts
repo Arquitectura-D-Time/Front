@@ -37,19 +37,18 @@ export class Form2Component implements OnInit {
         HoraFinal:"${this.horario.value.HoraFinal}",
         Cupos:${this.horario.value.Cupos}
       }){
-        IDtutoria
-        IDtutor
-        NombreMateria
         Fecha
-        HoraInicio
-        HoraFinal
-        Cupos
       }  
     }`
  })
-  .then(res => {
-  alert("Tutoria creada correctamente")
-  this.router.navigate(['tutorias'])
+  .then(res => {    
+    if(res.data.data==null){
+      alert("No se pudo crear correctamente la tutoria, por favor intente mas tarde")
+    }else{
+      alert("Tutoria creada correctamente"+res.data.Fecha)
+    }
+      
+    this.router.navigate(['tutorias'])
  })
   .catch(err => console.log(err))
 }

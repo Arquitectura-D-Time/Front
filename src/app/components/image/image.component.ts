@@ -32,4 +32,7 @@ export class ImageComponent implements OnInit {
   })
    
   }
+  clean(){
+    localStorage.clear();
+  }
 }
