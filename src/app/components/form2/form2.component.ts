@@ -26,7 +26,7 @@ export class Form2Component implements OnInit {
   }
 
   onSubmit(){
-    axios.post('http://146.148.107.218:5000/graphql?', {
+    axios.post('http://146.148.107.218/graphql?', {
     query: `mutation{
       createHorario(horario:{
         IDtutoria:${localStorage.getItem("idtutoria")},

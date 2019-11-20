@@ -13,7 +13,7 @@ export class TutoriasComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    axios.post('http://146.148.107.218:5000/graphql?', {
+    axios.post('http://146.148.107.218/graphql?', {
       query: `query{
           allHorarios{
             NombreMateria
