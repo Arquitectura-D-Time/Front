@@ -27,7 +27,7 @@ export class SignInComponent implements OnInit {
 //146.148.107.218 ---Dennis
 //35.202.129.233----Mia
   onSubmit() {
-    axios.post('http://146.148.107.218:5000/graphql?', {
+    axios.post('http://146.148.107.218/graphql?', {
       query: `mutation{
         createSession(session:{
           email:"${this.signInForm.value.email}"
