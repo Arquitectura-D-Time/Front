@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators, FormControl} from '@angular/forms';
 import axios from "axios";
+import {URL2} from "../../url.constants";
 import { Router } from '@angular/router';
 
 @Component({
@@ -30,13 +31,13 @@ export class FormComponent implements OnInit {
 //146.148.107.218 ---Dennis
 //35.202.129.233----Mia
     onSubmit(){
-      axios.post('http://146.148.107.218/graphql?', {
+      axios.post(URL2, {
       query: `mutation{
         createTutoria(tutoria:{
           materia:"${this.tutoForm.value.materia}",
           descripcion:"${this.tutoForm.value.descripcion}",
           cupos:${this.tutoForm.value.cupos},
-          idtutor:${localStorage.getItem("id")},
+          idtutor:5,
           idtoken:"random"
         }){
           id
