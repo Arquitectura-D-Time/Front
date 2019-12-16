@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,Validators, FormControl} from '@angular/forms';
+import {URL3} from "../../url.constants";
 import { HttpClient } from '@angular/common/http';
 import { error } from 'util';
 
@@ -10,7 +11,7 @@ import { error } from 'util';
   styleUrls: ['./image.component.css']
 })
 export class ImageComponent implements OnInit {
-  private urlapi = 'http://146.148.107.218:5006/image/'
+  private urlapi = URL3;
   urlimage;
   id=localStorage.getItem("id");
 
