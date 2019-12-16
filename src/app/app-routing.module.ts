@@ -14,12 +14,12 @@ import { AuthGuardService } from './services/auth-guard.service';
 const routes: Routes = [
   {path: 'sign-in', component: SignInComponent},
   {path: 'sign-up', component: SignUpComponent},
-  {path: 'form', component:FormComponent},
-  {path: 'form2', component:Form2Component},
+  {path: 'form', component:FormComponent,canActivate: [AuthGuardService]},
+  {path: 'form2', component:Form2Component,canActivate: [AuthGuardService]},
   {path: '', component: SignInComponent },
-  {path: 'profile', component: ProfileComponent},
-  {path: 'agendadas', component: AgendadasComponent},
-  {path: 'tutorias', component:TutoriasComponent}
+  {path: 'profile', component: ProfileComponent,canActivate: [AuthGuardService]},
+  {path: 'agendadas', component: AgendadasComponent,canActivate: [AuthGuardService]},
+  {path: 'tutorias', component:TutoriasComponent,canActivate: [AuthGuardService]}
 ];
 
 @NgModule({
