@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import axios from "axios";
+import {URL} from "../../url.constants";
 import { User } from 'app/models/user';
 
 @Component({
@@ -29,11 +30,10 @@ export class SignUpComponent implements OnInit {
       password_confirmation: new FormControl(this.user.password_confirmation, [Validators.required, Validators.minLength(6)]),
     });
   }
-//146.148.107.218 Dennis
-//35.202.129.233 mia
+
   onSubmit() {
     if(this.signUpForm.valid){
-      axios.post('http://146.148.107.218/graphql?', {
+      axios.post(URL, {
       query: `mutation{
         createUser(user:{
           name:"${this.signUpForm.value.name}"
