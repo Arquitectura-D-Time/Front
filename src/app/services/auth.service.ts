@@ -21,7 +21,7 @@ export class AuthService {
         if(token==null){
           resolve(false)
         }else{
-         axios.post('http://146.148.107.218/graphql?', {
+         axios.post('http://35.194.102.93:5000/graphql?', {
             query: `query{
               validateToken(headers: {
               token: "${token}"
