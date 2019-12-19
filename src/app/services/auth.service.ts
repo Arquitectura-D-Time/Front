@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from "axios";
+import {URL} from "../url.constants";
 
 
 @Injectable({
@@ -21,7 +22,7 @@ export class AuthService {
         if(token==null){
           resolve(false)
         }else{
-         axios.post('http://35.194.102.93:5000/graphql?', {
+         axios.post(URL, {
             query: `query{
               validateToken(headers: {
               token: "${token}"
