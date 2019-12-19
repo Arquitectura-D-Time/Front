@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import axios from "axios";
+import {URL} from "../../url.constants";
 
 @Component({
   selector: 'app-tutorias',
@@ -13,7 +14,7 @@ export class TutoriasComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    axios.post('http://146.148.107.218:5000/graphql?', {
+    axios.post(URL, {
       query: `query{
           allHorarios{
             NombreMateria
