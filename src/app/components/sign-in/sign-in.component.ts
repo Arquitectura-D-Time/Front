@@ -28,6 +28,7 @@ export class SignInComponent implements OnInit {
 
   onSubmit() {
     axios.post(URL, {
+      header: ('Acces-Control-Allow-Origin'),
       query: `mutation{
         createSession(session:{
           email:"${this.signInForm.value.email}"

@@ -34,6 +34,7 @@ export class SignUpComponent implements OnInit {
   onSubmit() {
     if(this.signUpForm.valid){
       axios.post(URL, {
+      header: ('Acces-Control-Allow-Origin'),
       query: `mutation{
         createUser(user:{
           name:"${this.signUpForm.value.name}"
